@@ -9,7 +9,7 @@ def modifier_cb(data, modifier, modifier_data, string):
         finals = string
         match = re.search('((\s|\:)[0-9]{8}(\s|$))',string)
         if match:
-            ipcenter = "https://ipcenter.ipsoft.com/IPim/Ticket/Display.html?id="+match.group()
+            ipcenter = "https://ipcenter.ipsoft.com/IPim/Ticket/Display.html?id="+match.group().strip()
             weechat.prnt(weechat.current_buffer(), "%s[IPCenter] %s%s" % (weechat.color("red") ,weechat.color("reset") , ipcenter))
             
         return "%s%s" % (string, "")
